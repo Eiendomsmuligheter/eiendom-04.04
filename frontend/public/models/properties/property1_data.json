@@ -1,0 +1,80 @@
+{
+  "id": "property1",
+  "name": "Storgata 5",
+  "type": "residential",
+  "subType": "apartment_building",
+  "status": "available",
+  "address": {
+    "street": "Storgata",
+    "number": "5",
+    "postalCode": "0155",
+    "city": "Oslo",
+    "country": "Norge",
+    "latitude": 59.9138,
+    "longitude": 10.7387
+  },
+  "dimensions": {
+    "length": 12,
+    "width": 10,
+    "height": 5.4,
+    "area": 120,
+    "volume": 648
+  },
+  "description": "Moderne leilighetsbygg med 2 etasjer i sentrum av Oslo. Bygget har god standard og er energieffektivt.",
+  "constructionYear": 2020,
+  "renovationYear": null,
+  "numberOfFloors": 2,
+  "ownership": [
+    {
+      "ownerId": "owner1",
+      "ownerName": "Oslo Eiendom AS",
+      "ownerType": "company",
+      "ownershipPercentage": 100,
+      "acquisitionDate": "2019-05-15"
+    }
+  ],
+  "valuations": [
+    {
+      "id": "val1",
+      "value": 12500000,
+      "currency": "NOK",
+      "date": "2024-01-15",
+      "type": "market",
+      "assessorName": "Norsk Takst AS"
+    }
+  ],
+  "energyData": {
+    "energyClass": "A",
+    "heatingSystem": "varmepumpe",
+    "annualConsumption": 8500,
+    "energySource": ["electricity", "solar"],
+    "certificationDate": "2020-06-10"
+  },
+  "taxInfo": {
+    "annualTax": 25000,
+    "taxAssessmentValue": 10000000,
+    "taxZone": "Oslo Sentrum",
+    "lastAssessmentDate": "2023-12-01"
+  },
+  "media": [
+    {
+      "id": "img1",
+      "type": "image",
+      "url": "/images/property-hero.jpg",
+      "thumbnailUrl": "/images/property-hero.jpg",
+      "title": "Fasade",
+      "uploadDate": "2024-01-10"
+    },
+    {
+      "id": "model1",
+      "type": "3d_model",
+      "url": "/models/properties/property1.json",
+      "title": "3D-modell",
+      "uploadDate": "2024-01-10"
+    }
+  ],
+  "features": ["elevator", "parking", "garden", "security_system"],
+  "createdAt": "2024-01-01T10:00:00Z",
+  "updatedAt": "2024-03-17T12:00:00Z",
+  "userId": "user1"
+} 

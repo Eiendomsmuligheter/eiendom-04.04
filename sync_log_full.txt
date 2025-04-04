@@ -1,0 +1,66 @@
+[04.04.2025 10:32:23,17] Starter synkronisering... 
+[04.04.2025 10:32:23,17] Kilde: C:\Users\Ahmad\OneDrive\plattform\eiendomsanalyse 
+[04.04.2025 10:32:23,18] MÃ¥l: https://github.com/Eiendomsmuligheter/eiendom-04.04.git 
+[04.04.2025 10:32:24,12] Starter robocopy prosess... 
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy for Windows                              
+-------------------------------------------------------------------------------
+
+  Started : fredag 4. april 2025 10:32:24
+   Source : C:\Users\Ahmad\OneDrive\plattform\eiendomsanalyse\
+     Dest : C:\Users\Ahmad\AppData\Local\Temp\temp_repo\
+
+    Files : *.*
+	    
+Exc Files : .gitignore
+	    sync_log.txt
+	    sync_log_full.txt
+	    .last_sync
+	    *.bat
+	    *.log
+	    *.tmp
+	    
+ Exc Dirs : node_modules
+	    venv
+	    .git
+	    
+  Options : *.* /NDL /NFL /S /E /DCOPY:DA /COPY:DAT /R:1 /W:1 
+
+------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------
+
+               Total    Copied   Skipped  Mismatch    FAILED    Extras
+    Dirs :       148       144         4         0         0         0
+   Files :       310       306         4         0         0         0
+   Bytes :   41.67 m   41.66 m     6.6 k         0         0         0
+   Times :   0:00:00   0:00:00                       0:00:00   0:00:00
+
+
+   Speed :           130ÿ811ÿ227 Bytes/sec.
+   Speed :              7485,079 MegaBytes/min.
+   Ended : fredag 4. april 2025 10:32:24
+
+[04.04.2025 10:32:24,56] Robocopy fullfÃ¸rt med kode: 1 
+[04.04.2025 10:32:24,59] Initialiserer Git... 
+Initialized empty Git repository in C:/Users/Ahmad/AppData/Local/Temp/temp_repo/.git/
+[04.04.2025 10:32:24,78] Legger til GitHub-repository... 
+Switched to a new branch 'temp_branch'
+[04.04.2025 10:32:24,86] Legger til filer til Git... 
+warning: in the working copy of 'eiendomsmuligheter-platform/backend/routes/property_routes.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'eiendomsmuligheter-platform/core_modules/docs_generator/building_application_generator.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'eiendomsmuligheter-platform/frontend/.next/build-manifest.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'eiendomsmuligheter-platform/frontend/.next/server/middleware-build-manifest.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'eiendomsmuligheter-platform/frontend/.next/server/middleware-manifest.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'eiendomsmuligheter-platform/frontend/.next/static/chunks/polyfills.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'eiendomsmuligheter-platform/frontend/components/Pricing.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'eiendomsmuligheter-platform/frontend/components/common/LegalDisclaimer.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'eiendomsmuligheter-platform/frontend/components/home/PricingSection/index.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'eiendomsmuligheter-platform/frontend/components/partners/ContractorRegistration.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'eiendomsmuligheter-platform/frontend/components/property/PropertyAnalyzer.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'eiendomsmuligheter-platform/frontend/components/subscription/SubscriptionPlans.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'eiendomsmuligheter-platform/frontend/components/visualization/Property3DViewer.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'eiendomsmuligheter-platform/frontend/pages/partners/index.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'eiendomsmuligheter-platform/yarn.lock', LF will be replaced by CRLF the next time Git touches it

@@ -1,0 +1,16 @@
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Installer npm-pakker
+COPY package*.json ./
+RUN npm ci
+
+# Kopier koden
+COPY . .
+
+# Eksponere port
+EXPOSE 5002
+
+# Kommando for å kjøre serveren
+CMD ["npm", "run", "dev"] 

@@ -1,0 +1,357 @@
+{
+  "id": "model_property1_1710672000000",
+  "propertyId": "property1",
+  "version": "1.0",
+  "created": "2025-03-17T12:00:00Z",
+  "updated": "2025-03-17T12:00:00Z",
+  "floors": [
+    {
+      "id": "floor_0",
+      "level": 0,
+      "height": 2.7,
+      "area": 120,
+      "elevation": 0,
+      "walls": [
+        {
+          "id": "wall_floor_0_front",
+          "type": "exterior",
+          "start": { "x": 0, "y": 0 },
+          "end": { "x": 10, "y": 0 },
+          "height": 2.7,
+          "thickness": 0.25,
+          "properties": {
+            "floorId": "floor_0",
+            "orientation": "front"
+          },
+          "openings": [
+            {
+              "id": "door_main",
+              "type": "door",
+              "width": 1.0,
+              "height": 2.1,
+              "position": {
+                "x": 5,
+                "y": 0,
+                "z": 0
+              },
+              "wallId": "wall_floor_0_front"
+            },
+            {
+              "id": "window_wall_floor_0_front_0",
+              "type": "window",
+              "width": 1.2,
+              "height": 1.4,
+              "position": {
+                "x": 2.5,
+                "y": 0,
+                "z": 1.35
+              },
+              "wallId": "wall_floor_0_front"
+            },
+            {
+              "id": "window_wall_floor_0_front_1",
+              "type": "window",
+              "width": 1.2,
+              "height": 1.4,
+              "position": {
+                "x": 7.5,
+                "y": 0,
+                "z": 1.35
+              },
+              "wallId": "wall_floor_0_front"
+            }
+          ]
+        },
+        {
+          "id": "wall_floor_0_back",
+          "type": "exterior",
+          "start": { "x": 0, "y": 12 },
+          "end": { "x": 10, "y": 12 },
+          "height": 2.7,
+          "thickness": 0.25,
+          "properties": {
+            "floorId": "floor_0",
+            "orientation": "back"
+          },
+          "openings": [
+            {
+              "id": "window_wall_floor_0_back_0",
+              "type": "window",
+              "width": 1.2,
+              "height": 1.4,
+              "position": {
+                "x": 3.3,
+                "y": 0,
+                "z": 1.35
+              },
+              "wallId": "wall_floor_0_back"
+            },
+            {
+              "id": "window_wall_floor_0_back_1",
+              "type": "window",
+              "width": 1.2,
+              "height": 1.4,
+              "position": {
+                "x": 6.6,
+                "y": 0,
+                "z": 1.35
+              },
+              "wallId": "wall_floor_0_back"
+            }
+          ]
+        },
+        {
+          "id": "wall_floor_0_left",
+          "type": "exterior",
+          "start": { "x": 0, "y": 0 },
+          "end": { "x": 0, "y": 12 },
+          "height": 2.7,
+          "thickness": 0.25,
+          "properties": {
+            "floorId": "floor_0",
+            "orientation": "left"
+          },
+          "openings": [
+            {
+              "id": "window_wall_floor_0_left_0",
+              "type": "window",
+              "width": 1.2,
+              "height": 1.4,
+              "position": {
+                "x": 4,
+                "y": 0,
+                "z": 1.35
+              },
+              "wallId": "wall_floor_0_left"
+            },
+            {
+              "id": "window_wall_floor_0_left_1",
+              "type": "window",
+              "width": 1.2,
+              "height": 1.4,
+              "position": {
+                "x": 8,
+                "y": 0,
+                "z": 1.35
+              },
+              "wallId": "wall_floor_0_left"
+            }
+          ]
+        },
+        {
+          "id": "wall_floor_0_right",
+          "type": "exterior",
+          "start": { "x": 10, "y": 0 },
+          "end": { "x": 10, "y": 12 },
+          "height": 2.7,
+          "thickness": 0.25,
+          "properties": {
+            "floorId": "floor_0",
+            "orientation": "right"
+          },
+          "openings": [
+            {
+              "id": "window_wall_floor_0_right_0",
+              "type": "window",
+              "width": 1.2,
+              "height": 1.4,
+              "position": {
+                "x": 4,
+                "y": 0,
+                "z": 1.35
+              },
+              "wallId": "wall_floor_0_right"
+            },
+            {
+              "id": "window_wall_floor_0_right_1",
+              "type": "window",
+              "width": 1.2,
+              "height": 1.4,
+              "position": {
+                "x": 8,
+                "y": 0,
+                "z": 1.35
+              },
+              "wallId": "wall_floor_0_right"
+            }
+          ]
+        }
+      ],
+      "features": []
+    },
+    {
+      "id": "floor_1",
+      "level": 1,
+      "height": 2.7,
+      "area": 120,
+      "elevation": 2.7,
+      "walls": [
+        {
+          "id": "wall_floor_1_front",
+          "type": "exterior",
+          "start": { "x": 0, "y": 0 },
+          "end": { "x": 10, "y": 0 },
+          "height": 2.7,
+          "thickness": 0.25,
+          "properties": {
+            "floorId": "floor_1",
+            "orientation": "front"
+          },
+          "openings": [
+            {
+              "id": "window_wall_floor_1_front_0",
+              "type": "window",
+              "width": 1.2,
+              "height": 1.4,
+              "position": {
+                "x": 2.5,
+                "y": 0,
+                "z": 1.35
+              },
+              "wallId": "wall_floor_1_front"
+            },
+            {
+              "id": "window_wall_floor_1_front_1",
+              "type": "window",
+              "width": 1.2,
+              "height": 1.4,
+              "position": {
+                "x": 5,
+                "y": 0,
+                "z": 1.35
+              },
+              "wallId": "wall_floor_1_front"
+            },
+            {
+              "id": "window_wall_floor_1_front_2",
+              "type": "window",
+              "width": 1.2,
+              "height": 1.4,
+              "position": {
+                "x": 7.5,
+                "y": 0,
+                "z": 1.35
+              },
+              "wallId": "wall_floor_1_front"
+            }
+          ]
+        },
+        {
+          "id": "wall_floor_1_back",
+          "type": "exterior",
+          "start": { "x": 0, "y": 12 },
+          "end": { "x": 10, "y": 12 },
+          "height": 2.7,
+          "thickness": 0.25,
+          "properties": {
+            "floorId": "floor_1",
+            "orientation": "back"
+          },
+          "openings": [
+            {
+              "id": "window_wall_floor_1_back_0",
+              "type": "window",
+              "width": 1.2,
+              "height": 1.4,
+              "position": {
+                "x": 3.3,
+                "y": 0,
+                "z": 1.35
+              },
+              "wallId": "wall_floor_1_back"
+            },
+            {
+              "id": "window_wall_floor_1_back_1",
+              "type": "window",
+              "width": 1.2,
+              "height": 1.4,
+              "position": {
+                "x": 6.6,
+                "y": 0,
+                "z": 1.35
+              },
+              "wallId": "wall_floor_1_back"
+            }
+          ]
+        },
+        {
+          "id": "wall_floor_1_left",
+          "type": "exterior",
+          "start": { "x": 0, "y": 0 },
+          "end": { "x": 0, "y": 12 },
+          "height": 2.7,
+          "thickness": 0.25,
+          "properties": {
+            "floorId": "floor_1",
+            "orientation": "left"
+          },
+          "openings": [
+            {
+              "id": "window_wall_floor_1_left_0",
+              "type": "window",
+              "width": 1.2,
+              "height": 1.4,
+              "position": {
+                "x": 4,
+                "y": 0,
+                "z": 1.35
+              },
+              "wallId": "wall_floor_1_left"
+            },
+            {
+              "id": "window_wall_floor_1_left_1",
+              "type": "window",
+              "width": 1.2,
+              "height": 1.4,
+              "position": {
+                "x": 8,
+                "y": 0,
+                "z": 1.35
+              },
+              "wallId": "wall_floor_1_left"
+            }
+          ]
+        },
+        {
+          "id": "wall_floor_1_right",
+          "type": "exterior",
+          "start": { "x": 10, "y": 0 },
+          "end": { "x": 10, "y": 12 },
+          "height": 2.7,
+          "thickness": 0.25,
+          "properties": {
+            "floorId": "floor_1",
+            "orientation": "right"
+          },
+          "openings": [
+            {
+              "id": "window_wall_floor_1_right_0",
+              "type": "window",
+              "width": 1.2,
+              "height": 1.4,
+              "position": {
+                "x": 4,
+                "y": 0,
+                "z": 1.35
+              },
+              "wallId": "wall_floor_1_right"
+            },
+            {
+              "id": "window_wall_floor_1_right_1",
+              "type": "window",
+              "width": 1.2,
+              "height": 1.4,
+              "position": {
+                "x": 8,
+                "y": 0,
+                "z": 1.35
+              },
+              "wallId": "wall_floor_1_right"
+            }
+          ]
+        }
+      ],
+      "features": []
+    }
+  ]
+} 

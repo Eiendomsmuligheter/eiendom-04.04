@@ -1,0 +1,1 @@
+Dette er en test for å sjekke om filsystemet er tilgjengelig og fungerer korrekt. 

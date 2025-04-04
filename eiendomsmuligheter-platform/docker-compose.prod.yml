@@ -1,0 +1,149 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.prod
+    ports:
+      - "443:443"
+    depends_on:
+      - backend
+    environment:
+      - NODE_ENV=production
+      - API_URL=https://api.eiendomsmuligheter.no
+    volumes:
+      - ./ssl:/etc/nginx/ssl
+      - ./nginx/prod.conf:/etc/nginx/nginx.conf
+    networks:
+      - app_network
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+        max_attempts: 3
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.prod
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=production
+      - DATABASE_URL=postgresql://user:pass@db:5432/eiendomsmuligheter
+      - REDIS_URL=redis://redis:6379/0
+      - STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY}
+      - STRIPE_WEBHOOK_SECRET=${STRIPE_WEBHOOK_SECRET}
+      - ENOVA_API_KEY=${ENOVA_API_KEY}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - TF_FORCE_GPU_ALLOW_GROWTH=true
+      - TF_CPP_MIN_LOG_LEVEL=2
+      - NVIDIA_VISIBLE_DEVICES=none
+    depends_on:
+      - db
+      - redis
+    networks:
+      - app_network
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+        max_attempts: 3
+
+  db:
+    image: postgres:14-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=pass
+      - POSTGRES_DB=eiendomsmuligheter
+    networks:
+      - app_network
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+      restart_policy:
+        condition: on-failure
+        max_attempts: 3
+
+  redis:
+    image: redis:6-alpine
+    volumes:
+      - redis_data:/data
+    command: redis-server --save 60 1 --loglevel warning --maxmemory 100mb --maxmemory-policy allkeys-lru
+    networks:
+      - app_network
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+      restart_policy:
+        condition: on-failure
+        max_attempts: 3
+
+  monitoring:
+    image: prom/prometheus:latest
+    volumes:
+      - ./prometheus:/etc/prometheus
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+      - '--web.console.templates=/usr/share/prometheus/consoles'
+      - '--storage.tsdb.retention.time=15d'
+    ports:
+      - "9090:9090"
+    networks:
+      - app_network
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+
+  backup:
+    image: postgres:14-alpine
+    volumes:
+      - postgres_data:/source:ro
+      - backup_data:/backup
+    environment:
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - PGHOST=db
+      - PGUSER=user
+      - PGPASSWORD=pass
+      - PGDATABASE=eiendomsmuligheter
+    entrypoint: ["/bin/sh", "-c"]
+    command: |
+      "
+      apk --no-cache add aws-cli
+      echo '0 2 * * * pg_dump -Fc > /backup/dump_$(date +%Y%m%d).sql && aws s3 cp /backup/dump_$(date +%Y%m%d).sql s3://eiendomsmuligheter-backup/' > /var/spool/cron/crontabs/root
+      crond -f -d 8
+      "
+    networks:
+      - app_network
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+
+volumes:
+  postgres_data:
+  redis_data:
+  prometheus_data:
+  backup_data:
+
+networks:
+  app_network:
+    driver: overlay
+    attachable: true
